@@ -25,9 +25,10 @@ const K0sMinVersion = "0.11.0-rc1"
 
 // K0s holds configuration for bootstraping a k0s cluster
 type K0s struct {
-	Version  string      `yaml:"version"`
-	Config   dig.Mapping `yaml:"config,omitempty"`
-	Metadata K0sMetadata `yaml:"-"`
+	Version       string      `yaml:"version"`
+	DynamicConfig bool        `yaml:"dynamicConfig"`
+	Config        dig.Mapping `yaml:"config,omitempty"`
+	Metadata      K0sMetadata `yaml:"-"`
 }
 
 // K0sMetadata contains gathered information about k0s cluster
